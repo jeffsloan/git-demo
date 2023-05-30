@@ -5,7 +5,9 @@ sync:redshift-users-salesforce-contact:
     operation: update
   triggers:
     schedule:
-      frequency: never
+      frequency: daily
+      hour: 15
+      minute: 0
   destination:
     connection_identifier: destination:salesforce
     object_identifier: Contact
