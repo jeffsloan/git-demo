@@ -1,0 +1,9 @@
+---
+model:business-users:
+  name: Business Users
+  query: |-
+    SELECT *
+    FROM dbt_marker.users
+    WHERE email NOT LIKE '%@hotmail.com%'
+  description: Excludes users with personal emails
+  connection: data_warehouse:redshift
