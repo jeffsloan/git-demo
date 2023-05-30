@@ -4,5 +4,5 @@ model:users:
   query: |-
     SELECT *
     FROM dbt_marker.users
-  description: 
+  description: This is the users we care about
   connection: data_warehouse:redshift
