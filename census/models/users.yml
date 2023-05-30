@@ -1,0 +1,8 @@
+---
+model:users:
+  name: Users
+  query: |-
+    SELECT *
+    FROM dbt_marker.users
+  description: 
+  connection: data_warehouse:redshift
