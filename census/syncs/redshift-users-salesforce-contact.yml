@@ -29,6 +29,13 @@ sync:redshift-users-salesforce-contact:
     to:
       field_name: FirstName
     preserve_values: false
+  - from:
+      type: column
+      data:
+        column_name: last_name
+    to:
+      field_name: LastName
+    preserve_values: false
   operational_settings:
     alerts:
       failed_run_notifications:
