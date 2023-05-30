@@ -1,6 +1,7 @@
 ---
 sync:redshift-users-salesforce-contact:
   paused: true
+  label: Cool sync
   behavior:
     operation: update
   triggers:
