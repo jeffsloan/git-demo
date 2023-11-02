@@ -1,7 +1,6 @@
 ---
-sync:redshift-users-salesforce-contact:
+sync:redshift-golden-users-braze-user:
   paused: false
-  label: Cool sync
   behavior:
     operation: update
   mapping_configuration:
@@ -10,27 +9,30 @@ sync:redshift-users-salesforce-contact:
       mode: add_only
   triggers:
     schedule:
-      frequency: daily
-      hour: 15
-      minute: 0
+      frequency: never
   destination:
-    connection_identifier: destination:salesforce
-    object_identifier: Contact
+    connection_identifier: destination:braze
+    object_identifier: user
   source:
-    type: entity
+    type: table
     connection_identifier: data_warehouse:redshift
-    object_identifier: entity:users
+    table_catalog: dev
+    table_schema: dbt_marker
+    table_name: golden_users
   mappings:
+  - from:
+      type: column
+      data:
+        column_name: id
+    to:
+      field_name: external_id
+    is_primary_identifier: true
   - from:
       type: column
       data:
         column_name: email
     to:
-      field_name: Email
-    is_primary_identifier: true
-    preserve_values: false
-  advanced_configuration:
-    bulk_id_lookup: true
+      field_name: email
   operational_settings:
     alerts:
       failed_run_notifications:

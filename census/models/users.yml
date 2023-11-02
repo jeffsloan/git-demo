@@ -3,6 +3,6 @@ model:users:
   name: Users
   query: |-
     SELECT *
-    FROM dbt_marker.users
-  description: This is the users we care about
-  connection: data_warehouse:redshift
+    FROM `sutrolabs-giza-production.test.user_data`
+  description: 
+  connection: data_warehouse:bigquery
