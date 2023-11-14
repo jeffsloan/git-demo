@@ -1,6 +1,6 @@
 ---
 model:products:
-  name: products
+  name: Products
   query: select * from products
   description: 
   connection: data_warehouse:snowflake
