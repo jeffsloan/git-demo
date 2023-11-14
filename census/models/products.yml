@@ -1,6 +1,6 @@
 ---
 model:products:
   name: Products
-  query: select * from products
+  query: select * from PRODUCT_DEMO_DATA.DATA_FOR_CENSUS.PRODUCTS
   description: 
   connection: data_warehouse:snowflake
