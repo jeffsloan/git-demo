@@ -1,6 +1,6 @@
 ---
 model:purchases:
   name: Purchases
-  query: select * from purchases
+  query: select * from PRODUCT_DEMO_DATA.DATA_FOR_CENSUS.PURCHASES
   description: 
   connection: data_warehouse:snowflake
