@@ -1,0 +1,30 @@
+---
+model:customers:
+  name: Customers
+  query: |-
+    select
+    USER_ID
+    , COMPANY_ID
+    , FIRST_NAME
+    , LAST_NAME
+    , FULL_NAME
+    , JOINED_AT
+    , DATE_OF_BIRTH
+    , IS_VIP
+    , EMAIL
+    , DOMAIN
+    , ZIP
+    --, replace(CITY,' ','') as CITY
+    , CITY
+    , STATE
+    , CASE WHEN RANDOM() < 0.33 THEN 'TIER_1'
+       WHEN RANDOM() BETWEEN 0.33 AND 0.66 THEN 'TIER_2'
+       ELSE 'TIER_3'
+       END AS vip_tier
+    , CASE WHEN vip_tier = 'TIER_1' THEN 51
+       WHEN vip_tier = 'TIER_2' THEN 133
+       ELSE 288
+       END AS vip_star_count
+    from users;
+  description: 
+  connection: data_warehouse:snowflake
