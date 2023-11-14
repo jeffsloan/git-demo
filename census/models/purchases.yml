@@ -1,0 +1,6 @@
+---
+model:purchases:
+  name: Purchases
+  query: select * from purchases
+  description: 
+  connection: data_warehouse:snowflake
