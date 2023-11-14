@@ -25,6 +25,6 @@ model:customers:
        WHEN vip_tier = 'TIER_2' THEN 133
        ELSE 288
        END AS vip_star_count
-    from users;
+    from PRODUCT_DEMO_DATA.DATA_FOR_CENSUS.users
   description: 
   connection: data_warehouse:snowflake
