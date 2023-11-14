@@ -1,0 +1,6 @@
+---
+model:website-events:
+  name: Website Events
+  query: select * from website_events
+  description: 
+  connection: data_warehouse:snowflake
