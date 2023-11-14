@@ -1,8 +1,0 @@
----
-model:users:
-  name: Users
-  query: |-
-    SELECT *
-    FROM `sutrolabs-giza-production.test.user_data`
-  description: 
-  connection: data_warehouse:bigquery
