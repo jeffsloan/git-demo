@@ -1,0 +1,8 @@
+---
+model:account-360:
+  name: Account 360
+  query: |-
+    SELECT *
+    FROM dbt_marker.golden_teams
+  description: 
+  connection: data_warehouse:redshift
